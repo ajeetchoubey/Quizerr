@@ -1,0 +1,33 @@
+{
+  "name": "quizerr-server",
+  "version": "1.0.0",
+  "description": "Quizerr Backend Server",
+  "main": "dist/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node dist/server.js",
+    "dev": "nodemon src/server.ts",
+    "build": "tsc",
+    "build:watch": "tsc -w"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": ["quizerr", "quiz", "backend", "server"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.5.2",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  }
+}

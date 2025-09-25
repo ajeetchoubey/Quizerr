@@ -65,34 +65,6 @@ npm run reset-db
 ### Manual Database Management
 The database file is created automatically at `server/database.db` when you run the seeder. If you need to inspect the database, you can use any SQLite browser or CLI tools.
 
-## Deployment
-
-### Deploying to Render
-
-1. **Prepare your repository:**
-   ```bash
-   git add .
-   git commit -m "Deploy to Render"
-   git push origin main
-   ```
-
-2. **Backend Deployment (Render Web Service):**
-   - Connect your GitHub repository
-   - Set Build Command: `cd server && npm install && npm run build`
-   - Set Start Command: `cd server && npm start`
-   - Add Environment Variables:
-     - `NODE_ENV=production`
-     - `PORT` (automatically set by Render)
-
-3. **Frontend Deployment (Render Static Site):**
-   - Connect your GitHub repository
-   - Set Build Command: `cd client && npm install && npm run build`
-   - Set Publish Directory: `client/dist`
-
-4. **Important Notes:**
-   - The backend will automatically seed the database on first startup
-   - Update the frontend's API base URL to point to your deployed backend
-   - Ensure CORS is configured for your frontend domain
 
 ## Project Structure
 

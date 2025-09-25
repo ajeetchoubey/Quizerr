@@ -1,5 +1,6 @@
 import { useState, useCallback } from 'react';
 import type { QuizState, QuizResults } from '../types/quiz';
+import { API_BASE_URL } from '../config/api';
 
 export const useQuiz = () => {
   const [quizState, setQuizState] = useState<QuizState>({
@@ -16,7 +17,7 @@ export const useQuiz = () => {
   const fetchQuestions = useCallback(async () => {
     setQuizState(prev => ({ ...prev, loading: true, error: null }));
     try {
-      const response = await fetch('http://localhost:5000/api/quiz/questions');
+      const response = await fetch(`${API_BASE_URL}/api/quiz/questions`);
       if (!response.ok) {
         throw new Error('Failed to fetch questions');
       }
@@ -90,7 +91,7 @@ export const useQuiz = () => {
           try {
             console.log('🚀 Submitting quiz with answers:', answersArray);
             
-            const response = await fetch('http://localhost:5000/api/quiz/submit', {
+            const response = await fetch(`${API_BASE_URL}/api/quiz/submit`, {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
